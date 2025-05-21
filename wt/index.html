@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WalterTech | Excelência em Suporte Técnico e Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00ffe1;
+      --dark-bg: #0b0f17;
+      --card-bg: #111826;
+      --text: #e4e4e4;
+      --accent: #05d8b0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    /* =================== NAVBAR =================== */
+header {
+  width: 100%;
+  padding: 20px 40px;
+  background: var(--dark-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid #1a1f2b;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.nav {
+  display: flex;
+  gap: 25px;
+}
+
+.nav a {
+  color: var(--text);
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: var(--primary);
+}
+
+.mobile-menu {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #111826;
+    flex-direction: column;
+    width: 180px;
+    display: none;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 225, 0.1);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    margin: 10px 0;
+    text-align: left;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://upgradeti.com.br/wp-content/uploads/2021/07/assistencia-tecnica-de-informatica-no-mundo-dos-negocios.jpg') no-repeat center center/cover;
+      z-index: -1;
+      filter: brightness(0.4);
+    }
+    .hero-content {
+      z-index: 2;
+      padding: 0 1.5rem;
+    }
+    .hero-content h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+    .btn {
+      background: var(--primary);
+      color: #000;
+      padding: 0.9rem 2rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: var(--accent);
+    }
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0, 255, 225, 0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .contato {
+      text-align: center;
+    }
+    .contato a {
+      background: var(--primary);
+      color: #000;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    footer {
+      background: #0a0f16;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">WalterTech</div>
+    <nav class="nav">
+      <a href="#sobre" title="Sobre"><i class="fas fa-info-circle"></i></a>
+      <a href="#servicos" title="Serviços"><i class="fas fa-cogs"></i></a>
+      <a href="#contato" title="Contato"><i class="fas fa-envelope"></i></a>
+      <a title="Login" onclick="login()"><i class="fa-solid fa-circle-user"></i></a>
+
+      
+    </nav>
+    <div class="mobile-menu" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Tecnologia & Eficiência</h2>
+      <p>Soluções em assistência técnica e suporte digital de alto nível. A escolha certa para quem exige qualidade.</p>
+      <a href="#contato" class="btn">Solicitar Atendimento</a>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre a WalterTech</h2>
+    <p style="text-align: center; max-width: 800px; margin: auto;">A WalterTech oferece soluções completas para desktops e infraestrutura web. Com foco na performance, segurança e confiabilidade, ajudamos empresas e usuários finais a manterem seus equipamentos e sistemas sempre operacionais.</p>
+  </section>
+
+  <section id="servicos">
+    <h2>Serviços Especializados</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Formatação Profissional</h3>
+        <p>Remoção de ameaças, instalação limpa e otimização de desempenho.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-desktop"></i>
+        <h3>Montagem de Computadores</h3>
+        <p>Montagens personalizadas com componentes de alta performance e airflow otimizado.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-fan"></i>
+        <h3>Manutenção Preventiva</h3>
+        <p>Limpezas técnicas, trocas de pasta térmica e verificação geral de hardware.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-globe"></i>
+        <h3>Manutenção de Sites</h3>
+        <p>Correções, melhorias, backup e suporte técnico especializado para seu site.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Entre em Contato</h2>
+    <div class="contato">
+      <p>Pronto para ser atendido? Fale diretamente pelo WhatsApp:</p>
+      <a href="https://wa.me/5535984378019" target="_blank">Iniciar Conversa</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 WalterTech. Todos os direitos reservados. Desenvolvido com tecnologia e propósito.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav").classList.toggle("active");
+    }
+
+   
+    
+      function login() {
+        Swal.fire({
+          title: "Login ADM",
+          html: `
+            <input id="swal-input1" class="swal2-input" placeholder="Usuário">
+            <input id="swal-input2" class="swal2-input" placeholder="Senha" type="password">
+          `,
+          focusConfirm: false,
+          showCancelButton: true,
+          confirmButtonText: "Enviar",
+          preConfirm: () => {
+            const user = document.getElementById('swal-input1').value;
+            const pass = document.getElementById('swal-input2').value;
+
+            if (!user || !pass) {
+              Swal.showValidationMessage("Por favor, preencha os dois campos!");
+              return false;
+            }
+
+            // Criar um formulário e enviá-lo
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = 'php/processa_login.php'; // Caminho para seu PHP
+
+            const input1 = document.createElement('input');
+            input1.type = 'hidden';
+            input1.name = 'usuario';
+            input1.value = user;
+            form.appendChild(input1);
+
+            const input2 = document.createElement('input');
+            input2.type = 'hidden';
+            input2.name = 'senha';
+            input2.value = pass;
+            form.appendChild(input2);
+
+            document.body.appendChild(form);
+            form.submit(); // Redireciona com POST
+          }
+        });
+      }
+
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
