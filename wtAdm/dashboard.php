@@ -4,17 +4,22 @@ session_start();
 include_once('conexao.php');
 
 $_SESSION['id_usuario'] = "1";
-$_SESSION['nome'] = "Vinicius Teste";
+$_SESSION['nome'] = "Vinicius Walter";
 $_SESSION['email'] = "viniciuswalterazevedo1202@waltertech.com";
+
+if($email = $_SESSION['email'] == ""){
+    echo '<script>
+            alert("Você não está logado !");
+            window.location.href="../index.html";
+          </script>';
+
+}
 
 $id_usuario = $_SESSION['id_usuario'];
 $nome = $_SESSION['nome'];
-$email = $_SESSION['email'];
-
-$servicos = 0;
-
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
