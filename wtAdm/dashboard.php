@@ -1,31 +1,23 @@
 <?php
-
 session_start();
-include_once('conexao.php');
 
-$_SESSION['id_usuario'] = "1";
-$_SESSION['nome'] = "Vinicius Walter";
-$_SESSION['email'] = "viniciuswalterazevedo1202@waltertech.com";
-
-if($email = $_SESSION['email'] == ""){
-    echo '<script>
-            alert("Você não está logado !");
-            window.location.href="../index.html";
-          </script>';
-
-}
+// Definição de session a encargo de testes
+// $_SESSION['id_usuario'] = "1";
+// $_SESSION['nome'] = "Vinicius Walter";
+// $_SESSION['email'] = "viniciuswalterazevedo1202@waltertech.com";
 
 $id_usuario = $_SESSION['id_usuario'];
 $nome = $_SESSION['nome'];
+$email = $_SESSION['email'];
 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Painel de Controle | WalterTech</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -151,10 +143,25 @@ $nome = $_SESSION['nome'];
   </style>
 </head>
 <body>
+
+    <?php
+        if ($email == "") {
+
+            echo "<script>
+                Swal.fire({
+                    title: 'Login não realizado!',
+                    icon: 'error'
+                }).then(() => {
+                    window.location.href = '../index.html';
+                });
+            </script>";
+
+        } else{
+            include_once('conexao.php');
+        }
+    ?>
   
   <div class="sidebar">
-    
-
     <div class="user">
               
       <div>
@@ -170,7 +177,6 @@ $nome = $_SESSION['nome'];
       <li><i class="fas fa-users"></i>Clientes</li>
       <li><i class="fas fa-box"></i>Produtos</li>
     </ul>
-    
   </div>
 
   <div class="main">
